@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script type="text/javascript">
+    //dom for dynamically access and update the content,structure and style of the document
+    //we can change the content of document by its method
+    /*
+    methods of the document object
+    write("string");
+    writeln("string");
+    getElementById();
+    getElementByName();
+    getElementByTagName();
+    getElementByClassName();
+    */
+     function printvalue(){
+         var name= document.form1.name.value;
+         alert("welcome:"+name);
+     }
+    //getElementById
+    function printvalue(){
+        var name = document.getElementsByClassName("number").value;
+        alert(name*name*name);
+
+    }
+    //getElementByTagName
+    function count2(){
+        var cou2 = document.getElementsByTagName("h2");
+        alert("total h2 tags is :"+cou2.length);
+    }
+     
+    function count3(){
+        var cou3 = document.getElementsByTagName("h3");
+        alert("total h3 tags is :"+cou3.length);
+    }
+
+    //inner HTML
+    function showcommentform(){
+        var data = "Name : <input type='Text' name = 'name' >
+                     <br>
+                     comment : <textarea rows = '5' cols = '80'>
+                     <br>
+                     <input type = 'submit' value = 'post Comment'>";
+    document.getElementById('mylocation').innerHTML = data;
+    }
+
+
+
+    </script>
+</head>
+<body>
+ <form name="form1">
+Enter Name:<input type="text" name="name"/>
+<input type="button" onclick="printvalue()" value="print name"><br><br><br>
+ </form>
+
+ <form>
+    Enter Name:<input type="text" id="number" name="number"/>
+    <input type="button" value="cube" onclick="printvalue()"><br><br><br>
+    </form>
+
+ <form>
+     Enter Name:<input type="text" class="number" name="number"/>
+     <input type="button" value="cube" onclick="printvalue()">
+    </form>
+
+    <h2>this is h2 tag</h2>
+    <h2>this is h2 tag</h2>
+    <h3>this is h2 tag</h3>
+    <h3>this is h2 tag</h3>
+<button onclick="count2()">count h2</button>
+<button onclick="count3()">count h3</button>
+<br><br><br>
+
+<form name="myForm">
+< input type="button" value="comment" onclick="showcommentform()">
+<div id="mylocation"></div>
+
+</form>
+
+</body>
+</html>
